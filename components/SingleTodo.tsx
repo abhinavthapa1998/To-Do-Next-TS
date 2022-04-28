@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
-import { AiFillEdit, AiFillDelete } from "react-icons/ai";
-import { MdDone } from "react-icons/md";
+import { AiOutlineEdit, AiOutlineDelete, AiOutlineCheck } from "react-icons/ai";
+import { MdDoneAll } from "react-icons/md";
 import { Todo } from "../model/Model";
 
 const SingleTodo: React.FC<{
@@ -38,36 +38,46 @@ const SingleTodo: React.FC<{
   };
 
   return (
-    <form className="todos__single" onSubmit={(e) => handleEdit(e, Todo.id)}>
+    <form className="todos_single" onSubmit={(e) => handleEdit(e, Todo.id)}>
       {edit ? (
-        <input
-          value={editTodo}
-          onChange={(e) => setEditTodo(e.target.value)}
-          className="todos_test"
-          ref={inputRef}
-        />
+        <>
+          <input
+            value={editTodo}
+            onChange={(e) => setEditTodo(e.target.value)}
+            className="todos_test"
+            ref={inputRef}
+          />
+          <p className="icon scaler" onClick={() => setEdit(false)}>
+            <AiOutlineCheck />
+          </p>
+        </>
       ) : Todo.isDone ? (
         <s className="todos_text">{Todo.Todo}</s>
       ) : (
         <span className="todos_text">{Todo.Todo}</span>
       )}
       <div>
-        <span
-          className="icon"
-          onClick={() => {
-            if (!edit && !Todo.isDone) {
-              setEdit(!edit);
-            }
-          }}
-        >
-          <AiFillEdit />
-        </span>
-        <span className="icon" onClick={() => handleDelete(Todo.id)}>
-          <AiFillDelete />
-        </span>
-        <span className="icon" onClick={() => handleDone(Todo.id)}>
-          <MdDone />
-        </span>
+        {!edit && (
+          <p
+            className="icon scaler"
+            onClick={() => {
+              if (!edit && !Todo.isDone) {
+                setEdit(!edit);
+              }
+            }}
+          >
+            <AiOutlineEdit />
+          </p>
+        )}
+
+        <p className="icon scaler" onClick={() => handleDelete(Todo.id)}>
+          <AiOutlineDelete />
+        </p>
+        {!edit && (
+          <p className="icon scaler" onClick={() => handleDone(Todo.id)}>
+            <MdDoneAll />
+          </p>
+        )}
       </div>
     </form>
   );

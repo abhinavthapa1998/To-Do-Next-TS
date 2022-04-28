@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Square+Peg&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Square+Peg&display=swap");
 * {
   font-family: "Square Peg", cursive;
   font-size: 30px;
 }
 body {
+  justify-content: space-between;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
@@ -24,6 +25,11 @@ body {
 
 h1 {
   font-size: 80px;
+  color: whitesmoke;
+}
+.container {
+  display: flex;
+  flex-direction: column;
 }
 .App {
   display: flex;
@@ -31,22 +37,69 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+.waveContainer {
+  position: relative;
+  margin-top: 40vh;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input_box::placeholder {
+  color: whitesmoke;
+  opacity: 0.5;
+}
+
 .input_box {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  width: 40vw;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+}
+.input_box:focus {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .input_submit {
-  font-family: sans-serif;
+  margin-top: 15px;
+  transform: scale(1.5);
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+  transition: 0.1s ease all;
+}
+.input_submit:hover {
+  transform: scale(1.4);
 }
 .todos_text {
   font-size: 50px;
+  color: whitesmoke;
+}
+
+.icon {
+  margin-right: 10px;
+  cursor: pointer;
+  color: white;
+}
+p {
+  display: inline-block;
+}
+.scaler {
+  transition: 0.1s ease all;
+}
+.scaler:hover {
+  transform: scale(1.4);
 }
 /* WAVES ANIMATION */
 .waves {
-  margin-top: 50vh;
-  position: relative;
+  margin-bottom: 0;
   width: 100%;
   height: 15vh;
-  margin-bottom: -7px; /*Fix for safari gap*/
   min-height: 100px;
   max-height: 150px;
 }

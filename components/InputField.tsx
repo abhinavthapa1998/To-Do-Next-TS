@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-
+import { AiOutlineFileAdd } from "react-icons/ai";
 interface props {
   Todo: string;
   setTodo: React.Dispatch<React.SetStateAction<string>>;
@@ -26,7 +26,7 @@ const InputField: React.FC<props> = ({ Todo, setTodo, handleAdd }) => {
         className="input_box"
       />
       <button type="submit" className="input_submit">
-        ADD
+        <AiOutlineFileAdd />
       </button>
     </form>
   );

@@ -19,14 +19,16 @@ const Home: NextPage = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <div className="App">
         <h1 className="heading">To-Do List</h1>
         <InputField Todo={Todo} setTodo={setTodo} handleAdd={handleAdd} />
         <TodoList Todos={Todos} setTodos={setTodos} />
       </div>
-      <Waves />
-    </>
+      <div className="waveContainer">
+        <Waves />
+      </div>
+    </div>
   );
 };
 
