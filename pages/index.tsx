@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InputField from "../components/InputField";
 
 import { Todo } from "../model/Model";
@@ -17,7 +17,13 @@ const Home: NextPage = () => {
       setTodo("");
     }
   };
-
+  const checkStorage = () => {
+    var retrievedData = JSON.parse(localStorage.getItem("List"));
+    if (retrievedData) setTodos(retrievedData);
+  };
+  useEffect(() => {
+    checkStorage();
+  }, []);
   return (
     <div className="container">
       <div className="App">

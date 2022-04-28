@@ -27,6 +27,9 @@ const SingleTodo: React.FC<{
 
   const handleDelete = (id: number) => {
     setTodos(Todos.filter((Todo) => Todo.id !== id));
+    if (Todos.length == 1) {
+      localStorage.setItem("List", JSON.stringify([]));
+    }
   };
 
   const handleDone = (id: number) => {
@@ -36,6 +39,10 @@ const SingleTodo: React.FC<{
       )
     );
   };
+
+  useEffect(() => {
+    localStorage.setItem("List", JSON.stringify(Todos));
+  }, [Todos]);
 
   return (
     <form className="todos_single" onSubmit={(e) => handleEdit(e, Todo.id)}>
