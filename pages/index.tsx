@@ -18,8 +18,10 @@ const Home: NextPage = () => {
     }
   };
   const checkStorage = () => {
-    var retrievedData = JSON.parse(localStorage.getItem("List") || "");
-    if (retrievedData) setTodos(retrievedData);
+    if (localStorage.getItem("List")) {
+      var retrievedData = JSON.parse(localStorage.getItem("List") || "Old");
+      if (retrievedData) setTodos(retrievedData);
+    }
   };
   useEffect(() => {
     checkStorage();
