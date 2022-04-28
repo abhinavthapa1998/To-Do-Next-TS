@@ -3,6 +3,7 @@
   font-family: "Square Peg", cursive;
   font-size: 30px;
 }
+/* THE MOVING BACKGROUND GRADIENT EFFECT */
 body {
   justify-content: space-between;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -22,9 +23,9 @@ body {
     background-position: 0% 50%;
   }
 }
-
+/* MAIN APPLICATION */
 h1 {
-  font-size: 80px;
+  font-size: calc(40px + 3vw);
   color: whitesmoke;
 }
 .container {
@@ -109,6 +110,21 @@ p {
   height: 20vh;
   text-align: center;
   background-color: white;
+}
+@media only screen and (max-width: 770px) {
+  h1 {
+    font-size: 55px !important;
+  }
+  .todos_text {
+    font-size: 35px;
+  }
+  .input_box {
+    width: 90vw;
+  }
+  .waveContainer {
+    bottom: 0;
+    transform: scaleY(2);
+  }
 }
 
 /* Animation */
