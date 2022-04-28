@@ -54,7 +54,7 @@ const SingleTodo: React.FC<{
             className="todos_test"
             ref={inputRef}
           />
-          <p className="icon scaler" onClick={() => setEdit(false)}>
+          <p className="icon scaler" onClick={(e) => handleEdit(e, Todo.id)}>
             <AiOutlineCheck />
           </p>
         </>
