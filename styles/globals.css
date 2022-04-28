@@ -1,16 +1,23 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Square+Peg&display=swap");
 * {
-  box-sizing: border-box;
+  font-family: "Square Peg", cursive;
+  font-size: 30px;
+}
+h1 {
+  font-size: 80px;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input_box {
+  font-family: sans-serif;
+}
+.input_submit {
+  font-family: sans-serif;
+}
+.todos_text {
+  font-size: 50px;
 }
