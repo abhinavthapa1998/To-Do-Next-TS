@@ -57,11 +57,13 @@ h1 {
 .input_box::placeholder {
   color: whitesmoke;
   opacity: 0.5;
+  padding: 10px;
 }
 
 .input_box {
   font-family: "Roboto", sans-serif;
   color: white;
+  padding: 10px;
   background-color: rgba(0, 0, 0, 0);
   width: 40vw;
   height: 50px;
